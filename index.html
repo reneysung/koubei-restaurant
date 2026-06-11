@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口碑愛集客 · 餐飲行銷方案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF5EA;--cream-2:#F4EAD7;--card:#FFFDF8;
+  --ink:#33271B;--ink-2:#6E5D49;--ink-3:#A8967C;
+  --line:#E7DAC2;
+  --terra:#C8553D;--terra-deep:#A4402B;--terra-soft:#F6E3D9;
+  --mustard:#E0A12E;--mustard-soft:#F8EBCC;
+  --green:#06C755;--green-deep:#04893B;--green-soft:#E5F7EC;
+  --serif:'Noto Serif TC',serif;--sans:'Noto Sans TC',sans-serif;--num:'DM Serif Display',serif;
+  --wave-m:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='11'%3E%3Cpath d='M0 7 Q9 1 18 7 T36 7' fill='none' stroke='%23E0A12E' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  --wave-g:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='11'%3E%3Cpath d='M0 7 Q9 1 18 7 T36 7' fill='none' stroke='%2306C755' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased}
+em{font-style:normal}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(251,245,234,.92);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--line);padding:14px 40px}
+.nav .brand{font-family:var(--serif);font-weight:900;font-size:19px}
+.nav .brand small{font-family:var(--sans);font-weight:700;font-size:11px;color:var(--terra);margin-left:7px;
+  background:var(--terra-soft);padding:3px 9px;border-radius:999px;letter-spacing:.05em}
+.nav .pages{display:flex;gap:2px;overflow-x:auto}
+.nav a{font-size:12.5px;color:var(--ink-2);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.2s}
+.nav a:hover{color:var(--terra);background:var(--terra-soft)}
+
+.sec{position:relative;padding:84px 56px;overflow:hidden}
+.sec.alt{background:var(--cream-2)}
+.sec.warm{background:var(--terra);color:#fff}
+.in{max-width:1060px;margin:0 auto;position:relative;z-index:1}
+
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--terra);margin-bottom:16px}
+h1{font-family:var(--serif);font-weight:900;font-size:60px;line-height:1.22;margin-bottom:20px}
+h2{font-family:var(--serif);font-weight:900;font-size:42px;line-height:1.28;margin-bottom:10px}
+.sub{font-size:17px;color:var(--ink-2);max-width:640px}
+
+/* 手繪波浪重點字 */
+.acc{color:var(--terra);background-image:var(--wave-m);background-repeat:repeat-x;
+  background-position:left 100%;background-size:34px 9px;padding-bottom:12px}
+.acc-g{color:var(--green-deep);background-image:var(--wave-g);background-repeat:repeat-x;
+  background-position:left 100%;background-size:34px 9px;padding-bottom:12px}
+
+/* cover */
+.cover{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.photo{position:relative;aspect-ratio:4/5;border-radius:22px;border:1.5px solid var(--line);
+  background:linear-gradient(155deg,#E8B563,#C8553D);display:flex;align-items:flex-end;padding:20px;color:rgba(255,255,255,.92);
+  box-shadow:0 24px 50px -20px rgba(164,64,43,.45)}
+.photo .slot{font-size:12px;line-height:1.6;border:1px dashed rgba(255,255,255,.55);border-radius:10px;padding:10px 13px;background:rgba(0,0,0,.1)}
+.stamp{position:absolute;top:-26px;left:-26px;width:104px;height:104px;border-radius:50%;
+  background:var(--card);border:2.5px solid var(--terra);color:var(--terra);
+  display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;
+  font-family:var(--serif);font-weight:900;font-size:21px;transform:rotate(-11deg);
+  box-shadow:0 8px 20px -6px rgba(200,85,61,.4);z-index:2}
+.stamp::after{content:"";position:absolute;inset:7px;border:1.5px solid var(--terra);border-radius:50%;opacity:.55}
+.pricetag{display:inline-flex;align-items:baseline;gap:11px;margin-top:30px;padding:16px 26px;
+  background:var(--mustard-soft);border:2px solid var(--mustard);border-radius:16px}
+.pricetag b{font-family:var(--num);font-size:34px;color:var(--ink)}
+.pricetag span{font-size:13px;color:var(--ink-2)}
+.byline{margin-top:30px;font-size:13px;color:var(--ink-3)}
+.byline b{color:var(--ink)}
+.couponwrap{position:relative}
+.coupon{position:relative;background:var(--card);border-radius:20px;border:1.5px solid var(--line);
+  overflow:hidden;box-shadow:0 24px 50px -22px rgba(164,64,43,.35)}
+.csample{position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:var(--ink-3);border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:var(--cream)}
+.cstore{padding:80px 30px 0;font-size:14px;font-weight:700;color:var(--ink-3);letter-spacing:.05em}
+.coffer{display:flex;align-items:baseline;gap:8px;padding:2px 30px 0;color:var(--terra);font-family:var(--num)}
+.coffer .pre{font-size:24px;align-self:flex-start;margin-top:18px}
+.coffer .big{font-size:88px;line-height:.95}
+.coffer .u{font-size:32px}
+.cdesc{padding:4px 30px 26px;font-size:13.5px;color:var(--ink-2)}
+.cperf{border-top:2px dashed var(--line);margin:0 22px}
+.cline{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;
+  font-family:var(--sans);font-weight:900;font-size:17px;padding:18px;margin-top:20px}
+
+/* pain */
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:42px}
+.pcard{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:28px 28px;
+  box-shadow:0 14px 30px -22px rgba(51,39,27,.4)}
+.pcard .qm{font-family:var(--num);font-size:46px;color:var(--mustard);line-height:.7;margin-bottom:6px}
+.pq{font-family:var(--serif);font-weight:700;font-size:21px;line-height:1.5;margin-bottom:14px}
+.pfix{display:flex;gap:9px;font-size:15px;font-weight:700;color:var(--terra)}
+.pcard.g .pfix{color:var(--green-deep)}
+
+/* funnel */
+.funnel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+.fstep{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:26px 24px}
+.fstep .badge{width:46px;height:46px;border-radius:50%;background:var(--terra);color:#fff;
+  font-family:var(--num);font-size:22px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.fstep h3{font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:4px}
+.fstep p{font-size:14px;color:var(--ink-2)}
+.fstep.line{background:var(--green-soft);border-color:#bfeaccc}
+.fstep.line .badge{background:var(--green)}
+.fstep.line h3{color:var(--green-deep)}
+.engine{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.engine span{font-size:13px;font-weight:700;padding:9px 17px;border-radius:999px;background:var(--terra-soft);color:var(--terra)}
+
+/* diff */
+.diff{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.dcard{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:30px 26px}
+.dcard .k{font-family:var(--num);font-size:13px;letter-spacing:.12em;color:var(--ink-3);margin-bottom:14px}
+.dcard h3{font-family:var(--serif);font-weight:900;font-size:24px;margin-bottom:8px}
+.dcard p{font-size:14.5px;color:var(--ink-2)}
+.dcard.hl{background:var(--mustard-soft);border:2px solid var(--mustard)}
+.dcard.hl h3{color:var(--terra-deep)}
+
+/* plan ticket */
+.ticket{position:relative;margin-top:42px;background:var(--card);border:2.5px dashed var(--terra);
+  border-radius:22px;padding:34px 38px}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:30px;height:30px;
+  background:var(--cream);border-radius:50%;transform:translateY(-50%)}
+.ticket::before{left:-17px;border-right:2.5px dashed var(--terra)}
+.ticket::after{right:-17px;border-left:2.5px dashed var(--terra)}
+.ticket .thead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;
+  padding-bottom:20px;border-bottom:1.5px dashed var(--line);margin-bottom:8px}
+.ticket .tt{font-family:var(--serif);font-weight:900;font-size:24px}
+.ticket .pp b{font-family:var(--num);font-size:44px;color:var(--terra)}
+.ticket .pp span{font-size:14px;color:var(--ink-2);margin-left:6px}
+.tlist{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+.ti{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;font-weight:700}
+.ti:nth-last-child(-n+1){border-bottom:none}
+.ti .ic{width:24px;height:24px;border-radius:50%;background:var(--terra-soft);color:var(--terra);
+  display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex:none}
+.ti.line .ic{background:var(--green-soft);color:var(--green-deep)}
+.tstamp{position:absolute;top:-22px;right:30px;width:78px;height:78px;border-radius:50%;
+  background:var(--mustard);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--serif);font-weight:900;font-size:17px;line-height:1.1;transform:rotate(9deg);
+  box-shadow:0 8px 18px -6px rgba(224,161,46,.6)}
+
+.note{margin-top:24px;display:flex;align-items:center;gap:14px;background:var(--terra-soft);
+  border:1.5px solid #e6c6ba;border-radius:16px;padding:18px 24px}
+.note .tag{flex:none;font-size:12px;font-weight:700;color:#fff;background:var(--terra);padding:7px 13px;border-radius:999px}
+.note p{font-size:15px;color:var(--ink)}
+.note b{color:var(--terra)}
+.renew{margin-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  background:var(--green-soft);border:1.5px solid #bfeacb;border-radius:16px;padding:24px 30px}
+.renew h3{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--green-deep);margin-bottom:4px}
+.renew p{font-size:14px;color:var(--ink-2)}
+.renew .r{text-align:right;white-space:nowrap}
+.renew .r b{font-family:var(--num);font-size:30px;color:var(--green-deep)}
+.renew .r span{display:block;font-size:12px;color:var(--ink-3)}
+.renew-badge{display:inline-block;background:var(--green);color:#fff;font-weight:900;font-size:18px;padding:14px 26px;border-radius:999px;box-shadow:0 8px 18px -8px rgba(6,199,85,.5)}
+.roi{margin-top:20px;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:28px 32px}
+.roi .rt{font-family:var(--serif);font-weight:700;font-size:17px}
+.roi .rn{font-size:12px;color:var(--ink-3);margin-bottom:20px}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rgrid b{display:block;font-family:var(--num);font-size:32px;color:var(--terra)}
+.rgrid .g{color:var(--green-deep)}
+.rgrid span{font-size:13px;color:var(--ink-2)}
+
+/* next */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.step{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:26px 24px}
+.step .n{font-family:var(--num);font-size:13px;color:var(--mustard);letter-spacing:.08em}
+.step h3{font-family:var(--serif);font-weight:900;font-size:21px;margin:6px 0 4px}
+.step p{font-size:14px;color:var(--ink-2)}
+.close{margin-top:52px;background:var(--terra);color:#fff;border-radius:24px;padding:50px 40px;text-align:center;
+  box-shadow:0 30px 60px -30px rgba(164,64,43,.6)}
+.close h2{color:#fff;font-size:34px;margin-bottom:8px}
+.close .cs{color:#fbe3da;font-size:16px;margin-bottom:26px}
+.close .acc-g2{color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='11'%3E%3Cpath d='M0 7 Q9 1 18 7 T36 7' fill='none' stroke='%23FBE3DA' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:left 100%;background-size:34px 9px;padding-bottom:12px}
+.cta{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--terra);font-weight:900;font-size:16px;
+  padding:16px 32px;border-radius:999px;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,0,0,.3)}
+.foot{text-align:center;padding:34px;font-size:12px;color:var(--ink-3)}
+
+@media (max-width:900px){
+  .nav{padding:12px 18px;flex-direction:column;gap:10px;align-items:flex-start}
+  .nav .pages{width:100%}
+  .sec{padding:54px 22px}
+  h1{font-size:38px}h2{font-size:29px}.sub{font-size:16px}
+  .cover{grid-template-columns:1fr;gap:34px}.photo{aspect-ratio:16/11}
+  .stamp{width:84px;height:84px;font-size:17px;top:-18px;left:-12px}
+  .pain,.funnel,.diff,.steps,.rgrid,.tlist{grid-template-columns:1fr}
+  .tlist{gap:0}.ticket{padding:28px 24px}
+  .ticket::before,.ticket::after{display:none}
+  .renew{flex-direction:column;align-items:flex-start}.renew .r{text-align:left}
+  .note{flex-direction:column;align-items:flex-start;gap:10px}
+  .pricetag b{font-size:28px}
+  .coffer .big{font-size:66px}
+  .coffer .pre{font-size:20px;margin-top:12px}
+  .coffer .u{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand">口碑製造所 <small>餐飲專版</small></div>
+  <div class="pages">
+    <a href="#p1">01 封面</a><a href="#p2">02 痛點</a><a href="#p3">03 客人怎麼來</a>
+    <a href="#p4">04 不一樣</a><a href="#p5">05 方案</a><a href="#p6">06 下一步</a>
+  </div>
+</nav>
+
+<!-- 01 -->
+<section class="sec" id="p1">
+  <div class="in">
+    <div class="cover">
+      <div>
+        <div class="eyebrow">口碑愛集客 · 餐飲方案</div>
+        <h1>讓看到的人，<br>變成<em class="acc-g">加 LINE 的常客</em></h1>
+        <p class="sub">一篇分享文、三個月 FB 投放、一頁帶優惠券的行銷頁　—　把短短幾天的曝光，變成留得住、會一直回訪的客人名單。</p>
+        <div class="pricetag"><b>NT$ 18,000</b><span>／ 三個月 · 含 FB 投放</span></div>
+        <div class="byline">提案單位　<b>口碑製造所</b>　wmf.com.tw</div>
+      </div>
+      <div class="couponwrap">
+        <div class="stamp">限時<br>優惠</div>
+        <div class="coupon">
+          <div class="csample">優惠券樣張</div>
+          <div class="cstore">您的店名</div>
+          <div class="coffer"><span class="pre">全品項</span><span class="big">85</span><span class="u">折</span></div>
+          <div class="cdesc">憑此券內用消費即可折抵</div>
+          <div class="cperf"></div>
+          <div class="cline">＋ 加 LINE 好友　領取此券</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="sec alt" id="p2">
+  <div class="in">
+    <div class="eyebrow">您的痛點</div>
+    <h2>餐飲老闆，<em class="acc">都遇過這四件事</em></h2>
+    <div class="pain">
+      <div class="pcard"><div class="qm">&ldquo;</div><p class="pq">FB 發完<br>就沉下去了</p><p class="pfix"><span>→</span>全導進一頁，看得到誰來過</p></div>
+      <div class="pcard"><div class="qm">&ldquo;</div><p class="pq">找人拍一支<br>三天就退燒</p><p class="pfix"><span>→</span>把人收進 LINE，熱度留得住</p></div>
+      <div class="pcard g"><div class="qm">&ldquo;</div><p class="pq">客人吃完就走<br>叫不回來</p><p class="pfix"><span>→</span>加 LINE 就是您的好友，能再找他</p></div>
+      <div class="pcard"><div class="qm">&ldquo;</div><p class="pq">不知道錢<br>有沒有回收</p><p class="pfix"><span>→</span>領券 · 加友 · 核銷，全有數字</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="sec" id="p3">
+  <div class="in">
+    <div class="eyebrow">客人怎麼來</div>
+    <h2>一條路，<em class="acc">從看到走到回購</em></h2>
+    <p class="sub">兩個引擎打進同一頁　·　想領券，就得加 LINE。</p>
+    <div class="funnel">
+      <div class="fstep"><div class="badge">1</div><h3>分享文打底</h3><p>長期吃自然流量</p></div>
+      <div class="fstep"><div class="badge">2</div><h3>FB 投放加速</h3><p>三個月持續衝量</p></div>
+      <div class="fstep"><div class="badge">3</div><h3>進行銷頁</h3><p>賣點＋最下面一張券</p></div>
+      <div class="fstep line"><div class="badge">4</div><h3>領券 → 加 LINE</h3><p>路人變您的名單</p></div>
+      <div class="fstep line"><div class="badge">5</div><h3>進您的名單</h3><p>歸店家官方帳號</p></div>
+      <div class="fstep"><div class="badge">6</div><h3>回購再行銷</h3><p>發 LINE，免再買廣告</p></div>
+    </div>
+    <div class="engine"><span>內容引擎：自然流量</span><span>付費引擎：FB 投放</span><span>同一頁落地</span></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="sec alt" id="p4">
+  <div class="in">
+    <div class="eyebrow">我們的不一樣</div>
+    <h2>同樣的錢，<em class="acc">多給您一條完整的路</em></h2>
+    <div class="diff">
+      <div class="dcard"><div class="k">01 / NOT JUST A POST</div><h3>不只一篇文</h3><p>文＋廣告＋頁＋券＋LINE，串成一條路。</p></div>
+      <div class="dcard hl"><div class="k">02 / YOUR LIST</div><h3>名單是您的</h3><p>加的是您的官帳，客人帶得走。</p></div>
+      <div class="dcard"><div class="k">03 / SEE THE RETURN</div><h3>看得到回收</h3><p>領券、加友、核銷，全用數字講話。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="sec" id="p5">
+  <div class="in">
+    <div class="eyebrow">方案與價格</div>
+    <h2>一個價，<em class="acc">整套包起來</em></h2>
+    <div class="ticket">
+      <div class="tstamp">85折<br>限時</div>
+      <div class="thead">
+        <div class="tt">口碑愛集客 · 三個月</div>
+        <div class="pp"><b>NT$ 18,000</b><span>／ 三個月</span></div>
+      </div>
+      <div class="tlist">
+        <div class="ti"><span class="ic">✓</span>行銷頁（含優惠券功能）</div>
+        <div class="ti"><span class="ic">✓</span>一篇分享文</div>
+        <div class="ti"><span class="ic">✓</span>三個月 FB 投放</div>
+        <div class="ti line"><span class="ic">✓</span>加 LINE 領券串接</div>
+        <div class="ti"><span class="ic">✓</span>成果追蹤回報</div>
+      </div>
+    </div>
+    <div class="note"><span class="tag">活動門檻</span><p>優惠券折扣需 <b>85 折（含）以下</b>　—　誘因夠強，客人才有動力加 LINE 領券。</p></div>
+    <div class="renew">
+      <div><h3>三個月後，名單才正要發酵</h3><p>持續經營這份 LINE 名單，才有穩定回購。</p></div>
+      <div class="r"><span class="renew-badge">續約再享優惠</span></div>
+    </div>
+    <div class="roi">
+      <div class="rt">回本怎麼看</div>
+      <div class="rn">以下為假設試算，非保證成效。</div>
+      <div class="rgrid">
+        <div><b>≈ 200</b><span>一天成本（18,000 ÷ 90 天）</span></div>
+        <div><b>2 組客</b><span>一天回 2 組就打平</span></div>
+        <div><b class="g">0 元</b><span>名單再觸及，免再買廣告</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="sec alt" id="p6">
+  <div class="in">
+    <div class="eyebrow">下一步</div>
+    <h2>三步驟，<em class="acc">兩週內開跑</em></h2>
+    <div class="steps">
+      <div class="step"><div class="n">STEP 01</div><h3>確認方案</h3><p>定活動、優惠（需 85 折以下）、分享文角度。</p></div>
+      <div class="step"><div class="n">STEP 02</div><h3>Kick-off 建置</h3><p>建頁、設券、串 LINE、寫文。</p></div>
+      <div class="step"><div class="n">STEP 03</div><h3>上線開投</h3><p>上線、開投，名單進帳。</p></div>
+    </div>
+    <div class="close">
+      <h2>您專心顧好菜，<br><em class="acc-g2">收客人交給我們</em></h2>
+      <p class="cs">就從這一檔活動開始，把每一個看到的人，變成您 LINE 裡的常客。</p>
+      <a class="cta" href="#p1">＋ 我要開始這檔活動</a>
+    </div>
+  </div>
+</section>
+
+<div class="foot">口碑製造所　wmf.com.tw　·　口碑愛集客</div>
+
+</body>
+</html>
